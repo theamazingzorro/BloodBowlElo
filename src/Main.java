@@ -19,8 +19,6 @@ public class Main {
 	 * Current Leagues:
 	 *  	-ftc
 	 *  	-ftcplayofftest
-	 *  	-rebbl (my div for tipping preds, always tip as it says!, if within 1% predict a draw
-	 *  				1 exception, always bet on yourself)
 	 */
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
@@ -40,7 +38,7 @@ public class Main {
 				case "newleague": createNewLeague(input[1]); break;
 				case "record": recordOutcome(input[1], input[2], input[3], input[4]); break;
 				case "predict": displayOutcomes(input[1], input[2]); break;
-				case "displayall": displayTeams(); break;
+				case "showall": displayTeams(); break;
 				case "load": read(input[1]); break;
 				case "save": save(); break;
 				case "saveas": saveAs(input[1]); break;
@@ -48,9 +46,7 @@ public class Main {
 				case "ranking": displayTeamsByElo(); break;
 				case "divranking": displayTeamsByEloInDiv(input[1]); break;
 				case "gamesplayed": displayTeamsByGamesPlayed(); break;
-				case "endweek": endWeek(input[1]); break;
 				case "byeweek": byeWeek(input[1]); break;
-				case "endteamweek": recordTeamWeek(input[1], input[2]); break;
 				case "delete": removeTeam(input[1]); break;
 				case "freedivs": freeDivs(); break;
 				case "setdiv": setTeamDiv(input[1], input[2]); break;
@@ -150,17 +146,6 @@ public class Main {
 		l.removeTeam(name);
 	}
 	
-	private static void recordTeamWeek(String name, String s) {
-		if(!l.hasTeam(name)) {
-			System.out.println("Error: team "+name+" not recognized.");
-			return;
-		}
-		int i = Integer.parseInt(s);
-		
-		l.getTeam(name).recordWeek(i);
-		System.out.println("Team "+name+" new score recorded.");
-	}
-	
 	private static void byeWeek(String name) {
 		if(!l.hasTeam(name)) {
 			System.out.println("Error: team "+name+" not recognized.");
@@ -168,12 +153,6 @@ public class Main {
 		}
 		l.getTeam(name).playGame();
 		System.out.println("Team "+name+" bye week recorded.");
-	}
-	
-	private static void endWeek(String s) {
-		int i = Integer.parseInt(s);
-		System.out.println("Ending week "+i);
-		l.endWeek(i);
 	}
 	
 	private static void displayTeamsByGamesPlayed() {
@@ -228,7 +207,6 @@ public class Main {
 		System.out.println("Team "+name+" created.");
 	}
 	
-	//
 	private static void addTeamWithElo(String name, String elo, String div) {
 		int e = Integer.parseInt(elo);
 		int d = Integer.parseInt(div);
