@@ -10,7 +10,7 @@ An ELO System with simple Command Line Interface
 - `ewleague 'filename'`
 - `exit` : exits without saving
 - `add 'teamname'`
-- `addelo 'teamname' 'startingELO' 'div'`
+- `addelo 'teamname' 'startingELO' 'div'` : adds a new team with starting ELO and division
 - `delete 'teamname'`
 - `setdiv 'teamname' 'newdiv'`
 - `freedivs` : moves all teams to div -1
