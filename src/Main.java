@@ -162,10 +162,10 @@ public class Main {
 	
 	private static void displayDivAvgElos() {
 		System.out.println();
-		System.out.println("Premier Upper Bracket average Elo: " + l.divAvgElo(1));
-		System.out.println("Premier Lower Bracket average Elo: " + l.divAvgElo(2));
-		System.out.println("Younglings Upper Bracket average Elo: " + l.divAvgElo(3));
-		System.out.println("Younglings Lower Bracket average Elo: " + l.divAvgElo(4));
+		System.out.println("Returning Premier teams' average Elo: " + l.divAvgElo(1));
+		System.out.println("Exiting Premier teams' average Elo: " + l.divAvgElo(2));
+		System.out.println("Returning Youngling teams' average Elo: " + l.divAvgElo(3));
+		System.out.println("Exiting Youngling teams' average Elo: " + l.divAvgElo(4));
 	}
 	
 	private static void displayTeamsByEloInDiv(String s) {
